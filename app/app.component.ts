@@ -1,11 +1,6 @@
 import {Component} from 'angular2/core'
-
-interface Painter {
-    id: number;
-    name: string;
-    style: string;
-    examples: string[];
-}
+import {Painter} from './painter'
+import {PainterDetailComponent} from './painter-detail.component'
 
 @Component({
     selector: 'my-app',
@@ -18,17 +13,9 @@ interface Painter {
                 <span class="badge">{{p.id}}</span> {{p.name}}
             </li>
         </ul>
-        <div *ngIf="selectedPainter">
-            <h2>{{selectedPainter.name}}</h2>
-            <div><label>style: </label>{{selectedPainter.style}}</div>
-            <div><label>examples: </label>{{selectedPainter.examples}}</div>
-            <div>
-                <h3>Edit</h3>
-                <label>name: </label>
-                <div><input [(ngModel)]="selectedPainter.name" placeholder="name"></div>
-            </div>
-        </div>
-    `
+        <my-painter-detail [painter]="selectedPainter"></my-painter-detail>
+    `,
+    directives: [PainterDetailComponent]
 })
 export class AppComponent {    
     public painters = PAINTERS;    
