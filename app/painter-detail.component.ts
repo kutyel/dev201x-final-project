@@ -1,7 +1,8 @@
-import {Component} from 'angular2/core'
-import {Painter} from './painter'
+import {Painter} from './painter';
+import {Component} from 'angular2/core';
 
 @Component({
+    inputs: ['painter'],
     selector: 'my-painter-detail',
     template: `
         <div *ngIf="painter">
@@ -14,8 +15,7 @@ import {Painter} from './painter'
                 <div><input [(ngModel)]="painter.name" placeholder="name"></div>
             </div>
         </div>
-    `,
-    inputs: ['painter']
+    `
 })
 export class PainterDetailComponent {
     public painter: Painter;

@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Michelangelo",
+            "style": "Renaissance",
+            "examples": [
+                "David",
+                "SistineChapel",
+                "TheLastJudgement"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Raphael",
+            "style": "Renaissance",
+            "examples": [
+                "SchoolatAthens",
+                "Lucretia",
+                "SaintGeorgeandtheDragon"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "VincentvanGogh",
+            "style": "Post-Impressionist",
+            "examples": [
+                "Self-portrait",
+                "TheStarryNight",
+                "TheYellowHouse"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "ClaudeMonet",
+            "style": "Impressionist",
+            "examples": [
+                "MorningontheSeine",
+                "TheWomanintheGreenDress",
+                "Sunrise"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "JohannesVermeer",
+            "style": "Baroque",
+            "examples": [
+                "TheMilkmaid",
+                "GirlwithaPearlEarring",
+                "TheMusicLesson"
+            ]
+        }
+    ]
+}
