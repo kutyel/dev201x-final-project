@@ -1,4 +1,5 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit } from '@angular/core';
+
 import { Painter } from './painter';
 import { PainterDetailComponent } from './painter-detail.component';
 import { PainterService } from './painter.service';
@@ -10,7 +11,7 @@ import { PainterService } from './painter.service';
     template: `
         <h1><img class="logoImg" src="img/brush.png" /> Famous painters</h1>
         <ul class="painters">
-            <li *ngFor="#p of painters"
+            <li *ngFor="let p of painters"
                 [class.selected]="p === selectedPainter"
                 (click)="onSelect(p)">
                 <span class="badge">{{p.id}}</span> {{p.name}}
@@ -19,15 +20,14 @@ import { PainterService } from './painter.service';
         <my-painter-detail [painter]="selectedPainter"></my-painter-detail>
     `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     public painters: Painter[];
     public selectedPainter: Painter;
 
-    constructor(private _painterService: PainterService) { }
+    constructor(private service: PainterService) { }
 
     getPainters(): void {
-        this._painterService.getPainters()
-            .subscribe(painters => this.painters = painters);
+        this.service.getPainters().then(p => this.painters = p);
     }
 
     ngOnInit(): void {

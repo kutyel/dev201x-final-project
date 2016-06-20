@@ -1,5 +1,6 @@
-import {Painter} from './painter';
-import {Component} from 'angular2/core';
+import { Component } from '@angular/core';
+
+import { Painter } from './painter';
 
 @Component({
     inputs: ['painter'],
